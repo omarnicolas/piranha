@@ -1,0 +1,50 @@
+{
+  "name": "piranha",
+  "version": "0.1.0",
+  "description": "gitcontributor crawler",
+  "main": "piranha.cli.js",
+  "scripts": {
+    "start": "node cli.js",
+    "dev": "nodemon cli.js",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "author": "Omar Nicolas",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "got": "^9.6.0",
+    "vorpal": "^1.12.0"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/got": "^9.6.7",
+    "@types/vorpal": "^1.12.0",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "standard": "^14.3.1"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "context",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "expect",
+      "test",
+      "jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix",
+      "pre-push": "npm test"
+    }
+  }
+}
